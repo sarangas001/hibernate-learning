@@ -22,10 +22,11 @@ public class LaunchUpdate
 
             Student student = new Student();
             student.setSid(3);
-            student.setsName("Ramesh");
-            student.setScity("Kadawatha");
+            student.setsName("Harsha");
+            student.setScity("Japura");
 
-            session.saveOrUpdate(student);
+//            session.saveOrUpdate(student);
+            session.merge(student);
             flag = true;
 
         } catch (HibernateException e) {
