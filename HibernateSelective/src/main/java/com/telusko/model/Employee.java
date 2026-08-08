@@ -2,15 +2,15 @@ package com.telusko.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
 
 @Entity
 public class Employee {
     @Id
     private Integer eid;
 
-    
     private String eName;
-
+    @Transient
     private String ecity;
 
     private Integer eage;
