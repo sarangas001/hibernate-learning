@@ -17,14 +17,16 @@ public class LanuchStandardAp {
 
         config = new Configuration();
 
-        config.setProperty("hibernate.connection.driver_class", "com.mysql.cj.jdbc.Driver" );
-        config.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/telusko_db");
-        config.setProperty("hibernate.connection.username", "root");
-        config.setProperty("hibernate.connection.password", "root");
-        config.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
-        config.setProperty("hibernate.show_sql", "true");
-        config.setProperty("hibernate.format_sql", "true");
-        config.setProperty("hibernate.hbm2ddl.auto", "update");
+//        config.setProperty("hibernate.connection.driver_class", "com.mysql.cj.jdbc.Driver" );
+//        config.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/telusko_db");
+//        config.setProperty("hibernate.connection.username", "root");
+//        config.setProperty("hibernate.connection.password", "root");
+//        config.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
+//        config.setProperty("hibernate.show_sql", "true");
+//        config.setProperty("hibernate.format_sql", "true");
+//        config.setProperty("hibernate.hbm2ddl.auto", "update");
+
+
 
         config.addAnnotatedClass(Student.class);
 
@@ -34,8 +36,8 @@ public class LanuchStandardAp {
         session = sessionFactory.openSession();
 
         Student student = new Student();
-        student.setSid(4);
-        student.setsName("Aseka");
+        student.setSid(3);
+        student.setsName("Ravindu");
         student.setScity("Mahara");
 
         try {
