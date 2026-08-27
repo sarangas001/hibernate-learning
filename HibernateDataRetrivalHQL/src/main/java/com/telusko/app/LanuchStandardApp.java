@@ -29,9 +29,12 @@ public class LanuchStandardApp {
 
 
         try {
-            // SELECT * FROM studenttable;
-            Query<Student> query = session.createQuery("FROM Student", Student.class);
-            List<Student> listStudent = query.list();
+            // SELECT * FROM studenttable WHERE scity=?;
+//            Query<Student> query = session.createQuery("FROM Student WHERE scity =:city", Student.class);
+            Query<String> query = session.createQuery("SELECT sname FROM Student WHERE scity IN(:city1, :city2)", String.class);
+            query.setParameter("city1", "Colombo");
+            query.setParameter("city2", "Mahara");
+            List<String> listStudent = query.list();
 
 //            for(Student s: listStudent) {
 //                System.out.println(s);
@@ -45,11 +48,7 @@ public class LanuchStandardApp {
         } catch (Exception e) {
             e.printStackTrace();
         }finally {
-            if (flag) {
-                transaction.commit();
-            }else {
-                transaction.rollback();
-            }
+
             session.close();
             sessionFactory.close();
         }
