@@ -35,7 +35,7 @@ public class LaunchRetrievalApp {
             e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        }finally { 
 
             try {
                 fos.close();
